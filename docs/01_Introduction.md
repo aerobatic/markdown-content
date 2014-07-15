@@ -1,6 +1,3 @@
-
-#Introduction
-
 Welcome to Aerobatic, the cloud platform for front-end developers that makes it fun to build nimble HTML5 web apps in record time. So what is Aerobatic? In a nutshell, it's a platform as a service (PaaS) for HTML5 web apps. You could think of it as [Heroku](http://www.heroku.com) for the front-end. Like Heroku, the Aerobatic platform makes it super simple to deploy and host an app in the cloud. Like this easy:
 
 ```bash

@@ -1,4 +1,3 @@
-# Traffic Control
 On most application platforms there is a single version of the application live
 at any given time. Aerobatic works differently in that every version deployed is
 always accessible. Within the application portal you can adjust what percentage
