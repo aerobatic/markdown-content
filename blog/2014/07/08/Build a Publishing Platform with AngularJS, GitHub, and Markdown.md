@@ -186,7 +186,7 @@ angular.module('aerobatic-io').run(function (content) {
 The `initialize` function invokes the GitHub API, parses the JSON into a
 list of custom `blogPost` objects and stores it in the `$rootScope`.
 
-#### Content Service
+### Content Service
 The complete code for the service is available [here](https://github.com/aerobatic/aerobatic-io/blob/master/js/services/content.js).
 ```js
 var contentIndexDeferred = $q.defer();
@@ -318,6 +318,7 @@ angular.module('aerobatic-io').config(function($routeProvider, $locationProvider
 });
 ```
 
+### Blog Controller
 Because a blog post could be the first view rendered by the app, I can't assume
 the contentIndex has already loaded, so I defer the controller logic until the
 `contentIndex()` promise has been resolved. If it has already resolved, then the
