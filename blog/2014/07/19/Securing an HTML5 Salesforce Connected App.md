@@ -1,16 +1,17 @@
+<meta name="author" value="david" />
 Recently we added a Salesforce connected app to the [Aerobatic app gallery](#!/gallery).
 Not surprisingly security is a major concern when it comes to Salesforce
 data as it contains valuable company and personal information. While developing our
-sample app, I discovered there are a number of decisions to be made in how
+sample app, I discovered there are a number of decisions to be made as to how
 security is implemented. This post shares what I learned and points out some of
 the different options available.
 
-_Note I'm talking about standalone connected apps rather than an Apex app which runs atop the Force.com platform._
+_Note this post is specific to standalone connected Salesforce apps rather than Apex apps which runs atop the Force.com platform._
 
 Our sample app, [Salesforce Contact Manager](https://sfcontacts.aerobaticapp.com/),
 simply displays all your Salesforce contacts as business cards. As always the full
 source code is available [on GitHub](https://github.com/aerobatic/sfcontacts).
-The app is implemented with AngularJS, but the information presented below is
+The app is implemented with AngularJS, but the information presented is
 applicable to any JavaScript powered HTML5 app. If you don't already have an
 account, the [Developer Edition](https://developer.salesforce.com/signup)
 is free and comes seeded with several sample contacts.
@@ -19,7 +20,7 @@ is free and comes seeded with several sample contacts.
 The first step in implementing a Salesforce app is to [create a new Connected App](https://help.salesforce.com/apex/HTViewHelpDoc?id=connected_app_create.htm&language=en_US).
 In this post we're concentrating on the OAuth setup, so ensure the __Enable OAuth Settings__
 box is checked. In the __Callback URL__ you'll need to enter the full URL of your app
-which the documentation states: __must be the URL must use secure HTTP (HTTPS)__.
+which the documentation states: __must use secure HTTP (HTTPS)__.
 This means that if you are running your app on localhost during development, you must create a
 self-signed certificate. Searching Google for how to create a self-signed certificate
 that Chrome will always trust led me to a number of dead ends. Finally [this article](http://www.robpeck.com/2010/10/google-chrome-mac-os-x-and-self-signed-ssl-certificates/#.U8mfZI1dUgo)
@@ -154,7 +155,7 @@ having to author any authentication specific server or client code at all.
 In the app dashboard, just select the Salesforce OAuth provider and paste
 in your consumer key and secret.
 
-![Aerobatic OAuth screenshot](https://s3-us-west-2.amazonaws.com/aerobatic-media/aerobatic-oauth-setup-screenshot.png)
+<img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/aerobatic-media/aerobatic-oauth-setup-screenshot.png" alt="Aerobatic OAuth Screenshot" />
 
 For OAuth protected Aerobatic apps, we deviate from the single page app model
 slightly by introducing a second page `login.html` which serves as a
@@ -226,7 +227,7 @@ reading right now was retrieved from GitHub and cached within the Aerobatic prox
 
 ## Wrapping Up
 I've covered the two basic aspects of security in a Salesforce connected app:
-authenticating via OAuth, then making API calls with the OAuth access token.
+authenticating via OAuth, and making API calls passing along the OAuth access token.
 Hopefully you've picked up something useful and perhaps you'll consider building
 your next HTML5 Salesforce connected app with Aerobatic.
 
