@@ -1,5 +1,5 @@
-<meta name="author" value="david" />
-<meta name="shorturl" value="http://bit.ly/WAKywY" />
+<meta id="blogAuthor" value="david" />
+<meta id="blogShortUrl" value="http://bit.ly/WAKywY" />
 
 Here at Aerobatic, we're all about single page applications. Our marketing website,
 www.aerobatic.io, is itself an AngularJS single page app hosted on our

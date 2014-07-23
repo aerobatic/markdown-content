@@ -1,5 +1,5 @@
-<meta name="author" value="david" />
-<meta name="shorturl" value="http://bit.ly/WAK9L2" />
+<meta id="blogAuthor" value="david" />
+<meta name="blogShortUrl" value="http://bit.ly/WAK9L2" />
 
 Recently we added a Salesforce connected app to the [Aerobatic app gallery](#!/gallery).
 Not surprisingly security is a major concern when it comes to Salesforce
