@@ -1,4 +1,6 @@
 <meta name="author" value="david" />
+<meta name="shorturl" value="http://bit.ly/WAK9L2" />
+
 Recently we added a Salesforce connected app to the [Aerobatic app gallery](#!/gallery).
 Not surprisingly security is a major concern when it comes to Salesforce
 data as it contains valuable company and personal information. While developing our
