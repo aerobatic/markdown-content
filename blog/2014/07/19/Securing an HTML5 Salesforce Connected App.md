@@ -1,4 +1,4 @@
-<meta id="authorBio" value="David Von Lehman is co-founder of Aerobatic. He oftentimes has visions of JavaScript, cloud platforms, and single page applications dancing in his head. Follow him @davidvlsea">
+<meta id="blogAuthorBio" value="David Von Lehman is co-founder of Aerobatic. He oftentimes has visions of JavaScript, cloud platforms, and single page applications dancing in his head. Follow him @davidvlsea">
 <meta id="blogShortUrl" value="http://bit.ly/WAK9L2" />
 
 Recently we added a Salesforce connected app to the [Aerobatic app gallery](#!/gallery).
