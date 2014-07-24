@@ -22,19 +22,16 @@ is free and comes seeded with several sample contacts.
 The first step is to login to Salesforce and [create a new Connected App](https://help.salesforce.com/apex/HTViewHelpDoc?id=connected_app_create.htm&language=en_US).
 In this post we're concentrating on the OAuth setup, so ensure the __Enable OAuth Settings__
 box is checked. In the __Callback URL__ you'll need to enter the full URL of your app
-which the documentation states: __must use secure HTTP (HTTPS)__.
-This means that if you are running your app on localhost during development, you must create a
-self-signed certificate. Searching Google for how to create a self-signed certificate
-that Chrome will always trust led me to a number of dead ends. Finally [this article](http://www.robpeck.com/2010/10/google-chrome-mac-os-x-and-self-signed-ssl-certificates/#.U8mfZI1dUgo)
-did the trick on OSX. This is only a concern while in development, once you
-deploy to production you'll want to use a certificate provisioned by a trusted authority.
+which the documentation states: __must use secure HTTP (HTTPS)__. Fortunately Salesforce does make an exception to this rule for `localhost` so you
+don't have to worry about SSL when developing locally.  
 
-One downside to developing your app on `https://localhost` is that you'll likely need to
-create two connected apps: one for development using localhost as the callback and a second with
-your production URL as the callback. One of the benefits of building HTML5 apps
+However one downside to developing your app on `localhost` is that you'll likely need to
+create two connected apps: one for development and a second for your actual
+production URL. One of the benefits of building HTML5 apps
 on the Aerobatic platform is the [simulator mode](#!/docs/getting-started?simulator-mode)
 that enables running a development environment directly from the production URL. This
-way you code in a fully integrated mode and only have to setup a single Salesforce app. Your Aerobatic OAuth callback URL is in the form: `https://your_app.aerobaticapp.com/auth/callback`.
+way you code in a fully integrated mode and only have to setup a single Salesforce app.
+Your Aerobatic OAuth callback URL is in the form: `https://your_app.aerobaticapp.com/auth/callback`.
 
 After clicking Save, be sure to make note of your Consumer Key and Consumer Secret.
 
@@ -46,7 +43,7 @@ flavors, described in [this article](https://www.salesforce.com/us/developer/doc
 2. [User-agent flow](https://www.salesforce.com/us/developer/docs/api_rest/Content/intro_understanding_user_agent_oauth_flow.htm), used by applications that cannot securely store the consumer secret.
 3. [Username-password flow](https://www.salesforce.com/us/developer/docs/api_rest/Content/intro_understanding_username_password_oauth_flow.htm), where the application has direct access to user credentials.
 
-The third option requires the user to enter their credentials in your own app;
+The third option requires the user to enter their credentials in your own app,
 defeating the point of OAuth which is to get out of the password business entirely. The other two options are viable, both with their own pros and cons as we'll see.
 
 ### User-Agent Flow
@@ -72,9 +69,9 @@ demonstrates this approach:
 ```js
 var apiVersion = 'v30.0',
     clientId = 'YOUR_CONSUMER_KEY_HERE',
-    loginUrl = 'https://login.salesforce.com/',
-    redirectURI = "https://localhost:3000/oauthcallback.html",
-    proxyURL = 'https://localhost:3000/proxy/',
+    loginUrl = 'http://login.salesforce.com/',
+    redirectURI = "http://localhost:3000/oauthcallback.html",
+    proxyURL = 'http://localhost:3000/proxy/',
     client = new forcetk.Client(clientId, loginUrl, proxyURL);
 
 function login() {
@@ -99,7 +96,7 @@ simply stashes the `access_token` in memory and includes it in an authorization
 header in subsequent API calls.
 
 Here's the source of the `oauthcallback.html` page that Salesforce passes
-the `access_token` back to in the URL:
+the `access_token` back to via the URL hash. The JavaScript is simply parsing the query parmeters out of the location hash and passes them back to the opener window before closing the popup.
 ```html
 <html>
 <body>
@@ -121,14 +118,14 @@ if (window.location.hash) {
 ```
 
 One thing to notice is that the app's `CONSUMER_KEY` has to be included in
-the client code in plain site. As we'll see shortly, the Aerobatic approach
-to OAuth allows storing the consumer key securely on the server, avoiding exposing it over the network.
+the client code in plain site. As I'll discuss shortly, the Aerobatic approach
+to OAuth allows storing the consumer key securely on the server avoiding exposing it over the network.
 
 ### Web Server Flow
 The [web server flow](https://www.salesforce.com/us/developer/docs/api_rest/Content/intro_understanding_web_server_oauth_flow.htm)
 works much the same way as the user-agent flow, but the OAuth negotiation takes place between Salesforce and the host web server rather than the user's browser.
 The advantage to this approach is the `access_token` can be securely
-stored on the server. Note the `access_token` would still need to be passed to the client if API calls were to be made directly from the browser, but as I'll cover shortly, Salesforce doesn't allow this type of API invokation.
+stored on the server. Note the `access_token` would still need to be passed to the client if API calls were to be made directly from the browser, but as we'll see, Salesforce doesn't allow this type of API invokation.
 
 The downside to this approach is that you'll need to write additional code on
 the server to handle this. If you have a Node.js/Express app, there is a great
@@ -145,10 +142,10 @@ having to author any authentication specific server or client code at all.
 In the app dashboard, just select the Salesforce OAuth provider and paste
 in your consumer key and secret.
 
-<img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/aerobatic-media/aerobatic-oauth	-setup-screenshot.png" alt="Aerobatic OAuth Screenshot" />
+<img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/aerobatic-media/aerobatic-oauth-setup-screenshot.png" alt="Aerobatic OAuth Screenshot" />
 
 For OAuth protected Aerobatic apps, we deviate from the single page app model
-slightly by introducing a second page `login.html`, which serves as a
+slightly by introducing a second `login.html` page, which serves as a
 pre-authenticated landing page. Both pages are served from the same root URL: `https://your_app.aerobaticapp.com/`.
 Behind the scenes Aerobatic serves the correct html page based on the user's authenticated state. The `login.html` page should include a relative link to the URL `/auth` inviting the user to sign-in with Salesforce.
 
