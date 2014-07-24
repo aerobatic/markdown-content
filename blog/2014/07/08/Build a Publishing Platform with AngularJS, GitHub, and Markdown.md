@@ -1,4 +1,4 @@
-<meta id="blogAuthor" value="david" />
+<meta id="authorBio" value="David Von Lehman is co-founder of Aerobatic. He oftentimes has visions of JavaScript, cloud platforms, and single page applications dancing in his head. Follow him @davidvlsea">
 <meta id="blogShortUrl" value="http://bit.ly/WAKywY" />
 
 Here at Aerobatic, we're all about single page applications. Our marketing website,
