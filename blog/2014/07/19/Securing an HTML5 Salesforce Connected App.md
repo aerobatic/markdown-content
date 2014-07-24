@@ -1,5 +1,5 @@
 <meta id="blogAuthor" value="david" />
-<meta name="blogShortUrl" value="http://bit.ly/WAK9L2" />
+<meta id="blogShortUrl" value="http://bit.ly/WAK9L2" />
 
 Recently we added a Salesforce connected app to the [Aerobatic app gallery](#!/gallery).
 Not surprisingly security is a major concern when it comes to Salesforce
@@ -145,7 +145,7 @@ having to author any authentication specific server or client code at all.
 In the app dashboard, just select the Salesforce OAuth provider and paste
 in your consumer key and secret.
 
-<img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/aerobatic-media/aerobatic-oauth-setup-screenshot.png" alt="Aerobatic OAuth Screenshot" />
+<img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/aerobatic-media/aerobatic-oauth	-setup-screenshot.png" alt="Aerobatic OAuth Screenshot" />
 
 For OAuth protected Aerobatic apps, we deviate from the single page app model
 slightly by introducing a second page `login.html`, which serves as a
