@@ -5,21 +5,44 @@ Perhaps the most glaring of these drawbacks is that any credentials needed to co
 Another drawback to direct communication from the browser to a remote API is performance. If the API has poor response times every end user will have to incur that latency. The API might be rate-limited and only allow a certain number of calls per period of time.
 
 ## Intelligent Service Proxy
-To combat these challenges, Aerobatic offers the service proxy module. Rather than making network calls directly to the remote service, your JavaScript makes a simple AJAX call back to an endpoint /proxy on the same host as the app. The actual URL of the API is encoded in a query parameter. Any sensitive values such as access keys, passwords, etc. are tokenized in the form %%CLIENT_KEY%%. These tokens can appear anywhere in the request including the querystring, request body, or HTTP headers. The proxy will replace the tokens with corresponding config values that are setup in the Aerobatic app dashboard.
+To combat these challenges, Aerobatic offers the service proxy module. Rather than making network calls directly to the remote service, your JavaScript makes a simple AJAX call back to an endpoint /proxy on the same host as the app. The actual URL of the API is encoded in a query parameter. Any sensitive values such as access keys, passwords, etc. are tokenized in the form `@@CLIENT_KEY@@`. These tokens can appear anywhere in the request including the querystring, request body, or HTTP headers. The proxy will replace the tokens with corresponding config values that are setup in the Aerobatic app dashboard.
 
-Here's how the service proxy could be invoked with jQuery. In this example the proxy would make the call to api.someservice.com/endpoint?access_key=my_access_key. The value "my_access_key" is stored in the SOMESERVICE_API_KEY config key and never sent over the wire to the browser.
+Here's how the service proxy could be invoked with jQuery. In this example the proxy would make the call to `https://api.someservice.com/endpoint?access_key=my_access_key`. The value "my_access_key" is stored in the SOMESERVICE_API_KEY config key and never sent over the wire to the browser.
 
 ```javascript
 $.ajax({
   url: "/proxy",
   type: "GET",
   data: {
-    url: "https://api.someservice.com/endpoint?access_key=%%SOMESERVICE_API_KEY%%"
+    url: "https://api.someservice.com/endpoint?access_key=@@SOMESERVICE_API_KEY@@"
   },
   success: function(data, status) {
   }
 });
 ```
+
+### Authorization Header
+If you need to pass an Authorization header to an API, you need to pass it to the proxy with the name `X-Authorization`. The Aerobatic proxy will automatically do any variable substitution then forward the header on as just plain `Authorization`.
+
+```js
+$.ajax({
+  type: "GET",
+  url: "/proxy?url=" + encodeURIComponent("https://api.someservice.com"),
+  dataType: 'json',
+  beforeSend: function(xhr) {
+    xhr.setRequestHeader ("X-Authorization", "Basic @@SOMESERVICE_AUTH_HEADER@@");
+  },
+  success: function (response){
+  }
+});
+```
+
+For APIs that use HTTP Basic Authentication, it is common for the username and password to be concatenated together then base64 encoded. In order to store this as a single config setting you need to perform the base64 encoding first and store the final value in the config. An easy way to do this is in your browser's developer console with the following command:
+
+```js
+btoa("<username>:<password>");
+```
+
 ### Caching
 Another feature of the service proxy is caching support. By appending the parameter _cache=1_ to the /proxy query string you can tell Aerobatic to cache the API response. If the response is already in the cache, the remote API never gets invoked. In addition to the _cache_ parameter, a key parameter must also be specified which is the string that should uniquely identify the API response in the cache. A third _ttl_ parameter can be specified which dictates how many seconds the response should be held in cache. If no _ttl_ parameter is specified, the proxy will attempt to honor either the _max-age_ or _expires_ headers returned by the API.
 
@@ -30,7 +53,7 @@ $.ajax({
   url: "/proxy",
   type: "GET",
   data: {
-    url: "https://api.someservice.com/endpoint?access_key=%%SOMESERVICE_API_KEY%%",
+    url: "https://api.someservice.com/endpoint?access_key=@@SOMESERVICE_API_KEY@@",
     cache: 1,
     key: "SOME_SERVICE_API_RESPONSE",
     ttl: 300 // cache for 5 minutes
