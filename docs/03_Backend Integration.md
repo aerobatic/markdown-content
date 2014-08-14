@@ -55,7 +55,6 @@ $.ajax({
   data: {
     url: "https://api.someservice.com/endpoint?access_key=@@SOMESERVICE_API_KEY@@",
     cache: 1,
-    key: "SOME_SERVICE_API_RESPONSE",
     ttl: 300 // cache for 5 minutes
   },
   success: function(data, status) {
@@ -63,7 +62,7 @@ $.ajax({
 });
 ```
 
-If the proxy locates an API response in the cache, it will automatically set the _max-age_ header in the response back to the browser to the time remaining. So for example let's assume the app cache is empty. User A makes a call to the proxy with cache key "foo" at 11:00 and a ttl of minutes. The proxy would make the call to the remote API, pipe the response to the cache, then pipe it on to the client with an _max-age_ header of 300 seconds. This will force user A's browser to cache the response so any additional calls user A makes to "foo" in the next 5 minutes will not incur any network round trip at all. Now say at 11:02 user B's browser makes a proxy call with key "foo". The proxy pipes the previously cached response to the browser setting the _max-age_ header to 3 minutes since that is how much longer it has to live.  
+If the proxy locates an API response in the cache, it will automatically set the _max-age_ header in the response back to the browser to the time remaining. So for example let's assume the app cache is empty. User A makes a call to the proxy for url X at 11:00 and a ttl of minutes. The proxy would make the call to the remote API, pipe the response first to the cache then on to the client with a _max-age_ header of 300 seconds. This will force user A's browser to cache the response so any additional calls user A makes for url X in the next 5 minutes will not incur any network round trip at all. Now say at 11:02 user B's browser makes a proxy call for url X. The proxy pipes the previously cached response to the browser setting the _max-age_ header to 3 minutes since that is how much longer it has to live.  
 
 In this way the Aerobatic service proxy can provide the benefits of caching even if the remote API does not set appropriate caching headers.
 

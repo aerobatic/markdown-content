@@ -10,7 +10,7 @@ the different options available.
 
 _Note this post is specific to standalone connected Salesforce apps rather than Apex apps which runs atop the Force.com platform._
 
-__Update__: I wrote a follow-up post entitled [Building a Single Page App with AngularJS and the Salesforce REST API](https://developer.salesforce.com/blogs/developer-relations/2014/07/building-single-page-app-angularjs-salesforce-rest-api.html) on the [Salesforce Developer Blog that builds upon the security basics covered here and goes into more depth on how the rest of the Contacts sample apps is built.
+__Update__: I wrote a follow-up post entitled [Building a Single Page App with AngularJS and the Salesforce REST API](https://developer.salesforce.com/blogs/developer-relations/2014/07/building-single-page-app-angularjs-salesforce-rest-api.html) on the Salesforce Developer Blog that builds upon the security basics covered here and goes into more depth on how the rest of the Contacts sample apps is built.
 
 Our sample app, [Salesforce Contact Manager](https://sfcontacts.aerobaticapp.com/),
 simply displays all your Salesforce contacts as business cards. As always the full
