@@ -22,7 +22,7 @@ One of the steps is to create a dot file in the root of your app directory calle
 
 The `secretKey` is your individual access key for performing grunt operations like deploying new versions for this app. Since it is sensitive you should ensure that your `.gitignore` file specifically excludes this file.
 
-Rather than starting from a blank slate, you can `git clone` one of the samples in the [app gallery](#!/gallery). For your first app, the [Starter Template](https://github.com/aerobatic/starter-template) is recommended (which the code in this article is taken from). The following terminal commands will clone the starter app, and use `npm` to install any grunt dev dependencies in declared in the `package.json`.
+Rather than starting from a blank slate, you can `git clone` one of the samples in the [app gallery](/gallery). For your first app, the [Starter Template](https://github.com/aerobatic/starter-template) is recommended (which the code in this article is taken from). The following terminal commands will clone the starter app, and use `npm` to install any grunt dev dependencies in declared in the `package.json`.
 
 ```bash
 > git clone git@github.com:aerobatic/starter-template.git aerobatic-starter
@@ -167,7 +167,7 @@ If you do a view-source of an Aerobatic app you'll see a snippet right above the
 ```html
 <script type="text/javascript">var __config__={<json_structure>};</script>
 ```
-Aerobatic injects this script block into `index.html` on the fly when the page is rendered. The `__config__` variable holds a JSON data structure with a bunch of contextual information about the current request. Since it is global to the page any of your JavaScript can access it. One common scenario is to include the versionName in calls to your web analytics so you can see reports segmented by app version (something you'll definitely want to consider in conjunction with split testing using [Traffic Control](#!/docs/traffic-control) rules). You can also dynamically build paths to assets in client code with `__config__.cdnUrl`.
+Aerobatic injects this script block into `index.html` on the fly when the page is rendered. The `__config__` variable holds a JSON data structure with a bunch of contextual information about the current request. Since it is global to the page any of your JavaScript can access it. One common scenario is to include the versionName in calls to your web analytics so you can see reports segmented by app version (something you'll definitely want to consider in conjunction with split testing using [Traffic Control](/docs/traffic-control) rules). You can also dynamically build paths to assets in client code with `__config__.cdnUrl`.
 
 ```js
 var __config__={
@@ -234,7 +234,7 @@ deploy: {
 }
 ```
 
-By default this will only stage the new version, but not cause any live traffic to be directed to it. In your app dashboard you can adjust the [Traffic Control](#!/docs/traffic-control) rules to direct all or a portion of live traffic to this version. Just because a new version has been deployed doesn't mean that it will ever go live. One of the powerful aspects of the Aerobatic deployment model is that every version ever deployed is accessible via a special URL like `http://<my_app>.aerobaticapp.com?version=<version_id>`. You could use these preview URLs for testing versions in a completely integrated manner and only direct live traffic if the version gets the green light from stakeholders.
+By default this will only stage the new version, but not cause any live traffic to be directed to it. In your app dashboard you can adjust the [Traffic Control](/docs/traffic-control) rules to direct all or a portion of live traffic to this version. Just because a new version has been deployed doesn't mean that it will ever go live. One of the powerful aspects of the Aerobatic deployment model is that every version ever deployed is accessible via a special URL like `http://<my_app>.aerobaticapp.com?version=<version_id>`. You could use these preview URLs for testing versions in a completely integrated manner and only direct live traffic if the version gets the green light from stakeholders.
 
 Because the deploy process is entirely command line driven you could easily integrate it into an automated continuous delivery process. Perhaps you have a version numbering convention and your build process could inject the dynamic version number as the `--name` argument.
 

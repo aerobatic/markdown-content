@@ -1,7 +1,7 @@
 <meta id="blogAuthorBio" value="David Von Lehman is co-founder of Aerobatic. He oftentimes has visions of JavaScript, cloud platforms, and single page applications dancing in his head. Follow him @davidvlsea">
 <meta id="blogShortUrl" value="http://bit.ly/WAK9L2" />
 
-Recently we added a Salesforce connected app to the [Aerobatic app gallery](#!/gallery).
+Recently we added a Salesforce connected app to the [Aerobatic app gallery](/gallery).
 Not surprisingly security is a major concern when it comes to Salesforce
 data as it contains valuable company and personal information. While developing our
 sample app, I discovered there are a number of decisions to be made as to how
@@ -9,6 +9,8 @@ security is implemented. This post shares what I learned and points out some of
 the different options available.
 
 _Note this post is specific to standalone connected Salesforce apps rather than Apex apps which runs atop the Force.com platform._
+
+__Update__: I wrote a follow-up post entitled [Building a Single Page App with AngularJS and the Salesforce REST API](https://developer.salesforce.com/blogs/developer-relations/2014/07/building-single-page-app-angularjs-salesforce-rest-api.html) on the [Salesforce Developer Blog that builds upon the security basics covered here and goes into more depth on how the rest of the Contacts sample apps is built.
 
 Our sample app, [Salesforce Contact Manager](https://sfcontacts.aerobaticapp.com/),
 simply displays all your Salesforce contacts as business cards. As always the full
@@ -28,7 +30,7 @@ don't have to worry about SSL when developing locally.
 However one downside to developing your app on `localhost` is that you'll likely need to
 create two connected apps: one for development and a second for your actual
 production URL. One of the benefits of building HTML5 apps
-on the Aerobatic platform is the [simulator mode](#!/docs/getting-started?simulator-mode)
+on the Aerobatic platform is the [simulator mode](/docs/getting-started?simulator-mode)
 that enables running a development environment directly from the production URL. This
 way you code in a fully integrated mode and only have to setup a single Salesforce app.
 Your Aerobatic OAuth callback URL is in the form: `https://your_app.aerobaticapp.com/auth/callback`.
@@ -178,7 +180,7 @@ so much so you can implement it in [one line](https://github.com/ccoenraets/soql
 The Salesforce REST Toolkit includes a [php proxy](https://github.com/developerforce/Force.com-JavaScript-REST-Toolkit/blob/master/proxy.php) also.
 
 ### Aerobatic API Proxy
-Aerobatic has a [built-in proxy](#!/docs/backend-integration) that offers some additional capabilities.
+Aerobatic has a [built-in proxy](/docs/backend-integration) that offers some additional capabilities.
 As discussed earlier, with the Aerobatic OAuth integration,
 the access token is not available to the browser. In the `X-Authorization`
 header we use a token in the form `@@user.accessToken@@`. The proxy
@@ -206,7 +208,7 @@ error(function(data, status, headers, config) {
 ```
 The proxy also offers caching capabilities that can have a dramatic performance
 improvement in the scenario where an app makes the same API call with the same
-parameters for all users. For example in my [previous blog post](#!/blog/2014/07/08/build-a-publishing-platform-with-angularjs-github-and-markdown)
+parameters for all users. For example in my [previous blog post](/blog/2014/07/08/build-a-publishing-platform-with-angularjs-github-and-markdown)
 I showed how the publishing system on www.aerobatic.io works. The blog post you are reading right now was retrieved from GitHub and cached within the Aerobatic proxy.
 
 ## Wrapping Up

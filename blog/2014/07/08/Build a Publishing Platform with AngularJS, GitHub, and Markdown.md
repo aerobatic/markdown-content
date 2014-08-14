@@ -20,7 +20,7 @@ changes only. Another option is to spin up a WordPress blog and load the content
 For an existing WordPress blog this would be a good solution, but since
 I'm starting a blog from scratch (this being the inaugural post, meta right?), I'd
 like something lighter weight. At Aerobatic we're already heavily reliant on
-GitHub; it's where all our [sample apps](#!/gallery) and
+GitHub; it's where all our [sample apps](/gallery) and
 [Grunt plugin](https://www.npmjs.org/package/grunt-aerobatic) lives, so storing
 blog posts, documentation articles, and other content in a GitHub repo is a natural fit.
 Plus it has the added benefit of commit history, tracking authorship, and all the version control
@@ -103,7 +103,7 @@ restricting un-authenticted API calls to only 60 requests per hour. Of course I 
 this piece goes wildly viral on Hacker News and Twitter so I'll optimistically assume
 that 60 rph won't cut it. Authenticated API requests have higher limits, but
 that would require authenticating blog visitors which is a no-go. Since this blog is running on the
-Aerobatic platform, I can take advantage of the built-in [API proxy](#!/docs/backend-integration)
+Aerobatic platform, I can take advantage of the built-in [API proxy](/docs/backend-integration)
 and specify parameters to force the JSON response to be cached in the Aerobatic
 cloud. That way large numbers of blog visitors can be served whilst remaining within
 the rate limit. The proxy will additionally set a `max-age` http header to achieve
@@ -130,7 +130,7 @@ _.slugify("Build a Publishing Platform with AngularJS, GitHub, and Markdown")
 
 The final friendly URL for this blog post then is:
 ```asciidoc
-http://www.aerobatic.io/#!/blog/2014/07/08/build-a-publishing-platform-with-angularjs-github-and-markdown
+http://www.aerobatic.io/blog/2014/07/08/build-a-publishing-platform-with-angularjs-github-and-markdown
 ```
 Our app will hold a reference to the content index object in memory and use it to data bind to navigational
 menus. More on that later.
@@ -310,6 +310,7 @@ angular.module('aerobatic-io').config(function($routeProvider, $locationProvider
   // Use the bang prefix for Google ajax crawlability
   // https://developers.google.com/webmasters/ajax-crawling/docs/specification?csw=1
   $locationProvider.hashPrefix('!');
+  $locationProvider.html5Mode(true);
 
   $routeProvider
     .when('/', { template: 'partials/index' })
@@ -330,7 +331,7 @@ callback will execute immediately.
 The `blogCtrl` examines the `$routeParams` and determines whether an index of
 blog posts or the content of a blog post should be rendered. If the `$routeParams`
 is empty then I automatically change the `$location.path` to be the most
-recent blog post. This allows for a convenient permalink http://www.aerobatic.io/#!/blog
+recent blog post. This allows for a convenient permalink http://www.aerobatic.io/blog
 that will always lead to the latest post. If the `$routeParams` has all 4 parts,
 then I locate the blog post whose `urlPath` matches `$location.path()` and pass
 it to the `load` function of the content service.
