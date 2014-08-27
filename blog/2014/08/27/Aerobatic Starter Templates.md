@@ -29,6 +29,6 @@ The possibilities for configuring how a single page app is structured and how th
 
 One thought for the future is to encapsulate most of the grunt configuration in an npm module. That way you'd be able to dramatically simplify your own project's Gruntfile by delegating the boilerplate to a function call so long as your project conforms to certain conventions - convention over configuration. Let me know if this is something that you'd find valuable.
 
-Hopefully these starter templates will smooth the process of getting a new app up and running on the Aerobatic platform. The goal is for you to spend less time on configuration setup and get right to building app experiences.
+Hopefully these starter templates will smooth the process of getting a new app up and running on the Aerobatic platform. The goal is for you to spend less time on configuration setup and get right to building app experiences. So what are you waiting for, go [create an app](https://aerobaticapp.com/auth/github) ;)
 
 Happy Coding!
