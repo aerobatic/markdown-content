@@ -26,7 +26,7 @@ Use plain anchor tags, rather than say button elements, for any navigational con
 To take a snapshot of your pages, you can use the `snapshot` Grunt task that comes with the [grunt-aerobatic](https://www.npmjs.org/package/grunt-aerobatic) package.
 
 ```bash
-grunt aerobatic:snapshot url=http://your_app.aerobaticapp.com/page-name
+grunt aerobatic:snapshot --url=http://your_app.aerobaticapp.com/page-name
 ```
 In your `Gruntfile.js` the task is configured like shown below. The only option is the `timeout` which specifies the number of ms to wait to allow all content to be appended to the DOM. The default is 3 seconds.
 ```js
