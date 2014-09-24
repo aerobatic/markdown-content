@@ -7,7 +7,7 @@ npm install -g grunt-cli
 ```
 
 ## Building Your First App
-1. Login to your Aerobatic dashboard and click the `Create App` button
+1. [Login to your Aerobatic dashboard](https://portal.aerobaticapp.com/auth) and click the `Create App` button
 2. Choose a name for your app. The URL for your app will be `http://<your-app-name>.aerobaticapp.com`
 3. Follow the instructions
 
