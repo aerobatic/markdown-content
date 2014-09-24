@@ -1,5 +1,5 @@
 <meta id="blogShortUrl" value="http://bit.ly/1rb6RTo">
-<meta id="blogAuthorBio" value="David Von Lehman is co-founder of Aerobatic. He oftentimes has visions of JavaScript, cloud platforms, and single page applications dancing in his head. Reach him at @davidvlsea or david@aerobatic.io">
+<meta id="blogAuthorBio" value="David Von Lehman is co-founder of Aerobatic. He oftentimes has visions of JavaScript, cloud platforms, and single page applications dancing in his head. Reach him at @davidvlsea or david@aerobatic.com">
 
 Starting a brand new single page application from scratch can be daunting. In order to make it as easy as possible to go from zero to something interesting on the Aerobatic platform, we're releasing starter templates as GitHub repos for the three leading JavaScript application frameworks: [AngularJS](https://www.angularjs.org), [Ember](http://emberjs.com), and [Backbone](http://backbone.js). When you create a new Aerobatic app, you can choose your preferred framework and get instructions on how to clone the appropriate repo to use as a starting point.
 
