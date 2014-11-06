@@ -17,7 +17,7 @@ Javascript Origin | https://[yourapp].aerobaticapp.com/
 
 Back in the Aerobatic portal visit the Settings screen for your app, click the OAuth option and select __Google__ in the provider dropdown. Copy and paste your __ClientID__ and __Client Secret__ from the developer console into the respective text fields. Next specify which [scopes](https://developers.google.com/accounts/docs/OAuth2Login#scope-param) you want to ask user consent for. At a minimum you'll need to specify a ["profile" scope](https://developers.google.com/+/api/oauth#profile) which simply grants the app access to the logged in user's basic profile information such as name and profile photo. You can ask for additional API scopes that will allow your app to make API calls on behalf of the logged in user to access their Gmail or Calendar data. Here's a [partial reference](https://developers.google.com/gdata/faq#AuthScopes) of the various API scopes, but it's not comprehensive. The Google Developer documentation is expansive, you're best bet is to search for "Google OAuth {API name} scope".
 
-![Screenshot](https://s3-us-west-2.amazonaws.com/aerobatic-media/aerobatic-portal-oauth-google.png)
+<img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/aerobatic-media/aerobatic-portal-oauth-google.png">
 
 The remaining step is to implement a `login.html` page that renders a link pointing to `/auth` which will automatically kick off the OAuth login flow. Thanks the Aerobatic dev simulator you can run a sandboxed instance of your app hosted on the production URL so all the OAuth just works even while coding locally. The [authentication documentation](/docs/authentication) has more details on the actual code implementation.
 
