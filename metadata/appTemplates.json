@@ -1,0 +1,47 @@
+{
+  "templates": [
+    {
+      "heading": "SPA Boilerplate",
+      "templates": [
+        {
+          "title": "Angular Seed",
+          "iconUrl": "https://s3-us-west-2.amazonaws.com/aerobatic-media/icons/angular-logo.png",
+          "description": "Good foundation for a new Angular single page app using ng-routing.",
+          "gitHubRepo": "aerobatic/angular-seed",
+          "demoUrl": "http://angular-seed.aerobaticapp.com"
+        },
+        {
+          "title": "Ember Starter",
+          "iconUrl": "https://d1295eb12t7yss.cloudfront.net/icons/ember-logo.png",
+          "description": "Ember starter app",
+          "gitHubRepo": "aerobatic/ember-starter",
+          "demoUrl": "http://emberjs-starter-kit.aerobaticapp.com/"
+        },
+        {
+          "title": "Backbone Boilerplate",
+          "iconUrl": "https://d1295eb12t7yss.cloudfront.net/icons/backbone-logo.png",
+          "description": "Backbone boilerplate using RequireJS",
+          "gitHubRepo": "aerobatic/backbone-boilerplate"
+        },
+        {
+          "title": "Vanilla JavaScript",
+          "iconUrl": "https://d1295eb12t7yss.cloudfront.net/icons/javascript-logo.jpg",
+          "description": "A simple vanilla JavaScript skeleton",
+          "gitHubRepo": "aerobatic/starter-template"
+        }
+      ]
+    },
+    {
+      "heading": "Mobile Specific",
+      "templates": [
+        {
+          "title": "Ionic",
+          "iconUrl": "https://d1295eb12t7yss.cloudfront.net/icons/ionic-logo.png",
+          "description": "Ionic app template",
+          "gitHubRepo": "aerobatic/ionic-template",
+          "comingSoon": true
+        }
+      ]
+    }
+  ]
+}
