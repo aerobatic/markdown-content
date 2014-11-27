@@ -1,0 +1,58 @@
+{
+  "docs": [
+    {
+      "title": "Introduction",
+      "url": "introduction"
+    },
+    {
+      "title": "Getting Started",
+      "url": "getting-started"
+    },
+    {
+      "title": "Working with index.html",
+      "url": "index-html"
+    },
+    {
+      "title": "Build Tool Configuration",
+      "url": "build-tool-config"
+    },
+    {
+      "title": "Directory Structure",
+      "url": "directory-structure"
+    },
+    {
+      "title": "Simulator Mode",
+      "url": "simulator-mode"
+    },
+    {
+      "title": "API Integration",
+      "url": "api-integration"
+    },
+    {
+      "title": "Authentication",
+      "url": "auth"
+    }
+  ],
+  "blogPosts": [
+    {
+      "title": "Build a Publishing Platform with AngularJS, GitHub, and Markdown",
+      "url": "2014/07/08/build-a-publishing-platform-with-angularjs-github-and-markdown"
+    },
+    {
+      "title": "Securing an HTML5 Salesforce Connected App",
+      "url": "2014/07/19/securing-an-html5-salesforce-connected-app"
+    },
+    {
+      "title": "Do it Yourself Social Sharing Buttons",
+      "url": "2014/07/23/do-it-yourself-social-sharing-buttons"
+    },
+    {
+      "title": "Aerobatic Starter Templates",
+      "url": "2014/08/27/aerobatic-starter-templates"
+    },
+    {
+      "title": "Google OAuth Support",
+      "url": "2014/11/05/google-oauth-support"
+    }
+  ]
+}
