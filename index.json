@@ -9,12 +9,12 @@
       "url": "getting-started"
     },
     {
-      "title": "Working with index.html",
+      "title": "The index page",
       "url": "index-html"
     },
     {
-      "title": "Build Tool Configuration",
-      "url": "build-tool-config"
+      "title": "Configuring package.json",
+      "url": "package-json"
     },
     {
       "title": "Directory Structure",
@@ -31,6 +31,14 @@
     {
       "title": "Authentication",
       "url": "auth"
+    },
+    {
+      "title": "Performance",
+      "url": "performance"
+    },
+    {
+      "title": "Starter Templates",
+      "url": "starter-templates"
     }
   ],
   "blogPosts": [

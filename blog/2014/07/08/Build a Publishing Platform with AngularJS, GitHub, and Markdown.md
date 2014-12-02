@@ -103,7 +103,7 @@ restricting un-authenticted API calls to only 60 requests per hour. Of course I 
 this piece goes wildly viral on Hacker News and Twitter so I'll optimistically assume
 that 60 rph won't cut it. Authenticated API requests have higher limits, but
 that would require authenticating blog visitors which is a no-go. Since this blog is running on the
-Aerobatic platform, I can take advantage of the built-in [API proxy](/docs/backend-integration)
+Aerobatic platform, I can take advantage of the built-in [API proxy](/docs/api-integration)
 and specify parameters to force the JSON response to be cached in the Aerobatic
 cloud. That way large numbers of blog visitors can be served whilst remaining within
 the rate limit. The proxy will additionally set a `max-age` http header to achieve

@@ -19,19 +19,23 @@ Your userId and secretKey can be found on the profile page: [https://portal.aero
 To create a new application, simply type:
 
 ```bash
-yoke app:create
+yoke create-app
 ```
 
 The terminal interface will walk you through a short set of questions such as the name and optionally a starter template that will provide a solid scaffolding or various JS frameworks including [Angular](https://github.com/aerobatic/angular-seed), [Ember](https://github.com/aerobatic/emberjs-starter-kit), and [Backbone](https://github.com/aerobatic/backbone-boilerplate). If a starter template is selected, the installer will download the latest code from GitHub and run `npm install` and `bower install` (if a `bower.json` file is found).
 
+### Existing Codebase
+You can also create an Aerobatic app from an existing codebase. Just select `Existing code` when prompted by the `create-app` command.
+
+
 ## Running app locally
-Now that the app code is downloaded, you can start a local development server with the following command:
+Now that the app code is downloaded, you can launch the app in simulator mode using the following command:
 
 ```
-yoke serve -o
+yoke sim -o
 ```
+The simulator mode is a hybrid development environment where the index page is served from your production URL, but your client assets are served from `http://localhost:3000` (or a port of your choosing). This gives you the best of both worlds: an isolated development sandbox, but also fully integrated with the Aerobatic platform and the internet at-large. The `-o` switch automatically opens a browser window to your app.
 
-The `-o` switch will automatically open a browser window to your app running at `http://localhost:3000` The port can be customized by including a `--port 4000` option.
 
 ## Coding
 
@@ -59,8 +63,9 @@ You'll be prompted for a version name (which is pre-populated with the version a
 ## Next Steps
 Now that you've got a basic app running, here's some further topics to explore to gain a deeper understanding of how Aerobatic works and add more functionality to your app:
 
-* Working with index.html
-* Configuring Grunt or Gulp
-* Enabling OAuth
-* Communicating with APIs
-* Simulator mode
+* [Working with index.html](/docs/index-html)
+* [Configuring package.json](/docs/package-json)
+* [Simulator mode](/docs/simulator-mode)
+* [App Authentication](/docs/auth)
+* [API Gateway](/docs/api-gateway)
+* [Search Engine Optimization](/docs/seo)

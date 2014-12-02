@@ -180,7 +180,7 @@ so much so you can implement it in [one line](https://github.com/ccoenraets/soql
 The Salesforce REST Toolkit includes a [php proxy](https://github.com/developerforce/Force.com-JavaScript-REST-Toolkit/blob/master/proxy.php) also.
 
 ### Aerobatic API Proxy
-Aerobatic has a [built-in proxy](/docs/backend-integration) that offers some additional capabilities.
+Aerobatic has a [built-in proxy](/docs/api-integration) that offers some additional capabilities.
 As discussed earlier, with the Aerobatic OAuth integration,
 the access token is not available to the browser. In the `X-Authorization`
 header we use a token in the form `@@user.accessToken@@`. The proxy

@@ -36,7 +36,7 @@ aerobatic: {
 ```
 
 ##Making API Calls
-Once authenticated you can make calls to the provider's API on behalf of the user. These calls can be made directly from the browser using CORS or JSONP, or you can proxy the calls via the [Aerobatic API proxy]('/docs/backend-integration'). In order to make calls from the browser you will need to pass the access token to the API.
+Once authenticated you can make calls to the provider's API on behalf of the user. These calls can be made directly from the browser using CORS or JSONP, or you can proxy the calls via the [Aerobatic API proxy]('/docs/api-integration'). In order to make calls from the browser you will need to pass the access token to the API.
 
 Fetching popular photos from Instagram directly:
 ```js
