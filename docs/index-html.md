@@ -92,7 +92,7 @@ var __config__={
 }
 ```
 
-In `__config__` variable will also indicate whether the app is currently in simulator mode.
+The `__config__` variable will also indicate whether the app is currently in simulator mode.
 
 ```js
 var __config__={

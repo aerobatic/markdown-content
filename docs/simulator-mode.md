@@ -1,4 +1,3 @@
-
 # Simulator Mode
 
 The simulator mode is a unique feature of Aerobatic that provides a fully integrated development environment. Typically when building static apps you work off of a localhost URL. This works well for simple apps, but there are scenarios where it breaks down. For example when registering with an OAuth provider you have to specify the callback URL that the provider will redirect to and this URL has to match the origin of the request from your actual app, not `localhost`. Another potential scenario is making a CORS request to a remote domain that has rules on what domains are allowed. By developing and testing on your production domain, you eliminate these and other potential environment discrepancies and uncover integration issues early on.

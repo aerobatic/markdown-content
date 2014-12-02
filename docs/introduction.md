@@ -12,14 +12,15 @@ Modern web apps no longer need be constrained by the traditional one page at a t
 
 As single page web apps emerge as the default style of web app development, Aerobatic strives to be the premier platform on which they are delivered.
 
-##Smart Hosting Modules
+## Smart Hosting Modules
+While pure client code can accomplish an awful lot, there are still scenarios where it pays to have a server working on behalf of your client app. The Aerobatic smart hosting modules do just that without you having to write any server code at all.
 
-### API Integration
-You can go a long way with just the browser and static pages these days. With AJAX, [CORS](https://developer.mozilla.org/en-US/docs/HTTP/Access_control_CORS), web APIs, backend as a service offerings such as [Firebase](https://www.firebase.com/) and [Parse](https://parse.com/docs/js_guide), it's increasingly possible to build sophisticated web apps with no server component at all. However despite these advances, the pure static app model does introduce complications and forces certain compromises to be made.
+### API Gateway
+While it is possible to invoke remote APIs directly via [CORS](https://developer.mozilla.org/en-US/docs/HTTP/Access_control_CORS), there are many situations where the target API cannot be directly called from client script, for security reasons, or lack of CORS support. 
 
-For example a fully static app that invokes a web API requiring access keys (as most do), those keys need to be sent in the HTML payload to the browser in plain site. Aerobatic provides an [API Gateway](/docs/api-integration) that will proxy the API call on the app's behalf while injecting the access keys that are securely stored on the server. Additionally if the API being consumed has high latency or is rate limited, the proxy can be set to cache the responses in the cloud for more predictable performance.
+Many APIs require one or more keys or tokens to be passed along in the URL or in a HTTP header. Depending on the API, you may not wish to leak these keys to the world by sending them in clear text in your JavaScript. Aerobatic provides an [API Gateway](/docs/api-integration) that will proxy the API call on the app's behalf while injecting the access keys that are securely stored on the server. Additionally if the API being consumed has high latency or is rate limited, the proxy can be set to cache the responses in the cloud for more predictable performance.
 
-### OAuth
+### Authentication
 Another capability that can be difficult to achieve in the browser alone is authentication. Aerobatic makes it super simple to require users to authenticate via multiple popular OAuth providers including [Google](https://developers.google.com/accounts/docs/OAuth2), [LinkedIn](https://developer.linkedin.com/documents/authentication), [Facebook](https://developers.facebook.com/docs/facebook-login/login-flow-for-web/), [Twitter](https://dev.twitter.com/docs/auth/using-oauth), [Instagram](http://instagram.com/developer/), [GitHub](https://developer.github.com/v3/oauth/). All developers need to do is register their application with the desired provider and securely store their assigned client key and secret keys within the app dashboard. Aerobatic will automatically take care of the entire OAuth handshake exchange.
 
 ## SEO
