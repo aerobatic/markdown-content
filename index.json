@@ -13,7 +13,7 @@
       "url": "yoke"
     },
     {
-      "title": "The index page",
+      "title": "Index page",
       "url": "index-html"
     },
     {
@@ -29,8 +29,8 @@
       "url": "simulator-mode"
     },
     {
-      "title": "API Integration",
-      "url": "api-integration"
+      "title": "API Gateway",
+      "url": "api-gateway"
     },
     {
       "title": "Authentication",

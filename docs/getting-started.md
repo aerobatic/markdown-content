@@ -1,3 +1,5 @@
+# Getting Started
+Let's get your app up and running on Aerobatic. It should only take a few minutes.
 
 ## Install yoke
 The `yoke` command line tool is used to power the development workflow including creating, building, and deploying application. Open your terminal and run the following:

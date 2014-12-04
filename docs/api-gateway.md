@@ -1,3 +1,5 @@
+# API Gateway
+
 In the single page app model the browser generally integrates with backend APIs by invoking remote URLs directly. Traditionally the browser security model intentionally disallows many forms of network communicate across domain boundries. There are workarounds like JSONP and iframe hacks, but they're not first class browser primitives for cross domain communication. Fortunately HTML5 introduces [cross-origin resource sharing](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) (aka CORS) which enables the same XmlHttpRequest that is used for same domain AJAX calls to work across domains. While CORS is a key technology for enabling browsers as application platforms, there are still drawbacks to contend with.
 
 Perhaps the most glaring of these drawbacks is that any credentials needed to communicate with the remote API must be included in the web page where it can be seen by anyone with access to the site. For some APIs this might not be a big deal, but where access to the API is restricted, it could be unacceptable.

@@ -1,6 +1,6 @@
 # Directory Structure
 
-Aerobatic defaults to certain conventions that are commonly advised in the front-end development circles. By conforming to these conventions you can simplify your configuration (convention over configuration), however they can be overridden in the package.json file.
+Aerobatic defaults to some specific common font-end conventions. By conforming to these conventions you can simplify your configuration (convention over configuration), however they can be overridden in the package.json file.
 
 Here is the basic suggested skeleton for your app repo that each of the starter templates conforms to:
 
