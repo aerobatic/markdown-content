@@ -1,3 +1,5 @@
+# Traffic Control
+
 On most application platforms there is a single version of the application live
 at any given time. Aerobatic works differently in that every version deployed is always accessible. Within the application portal you can adjust what percentage of sessions should be given which version; whether it be 100% of traffic to a single version or split the traffic to two or more versions in whatever proportions you like. This capability can be used to enable both testing of different experiences as well as [green/blue deployments](http://martinfowler.com/bliki/BlueGreenDeployment.html) where new
 versions are initially released to a small subset of overall users to reduce

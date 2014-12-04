@@ -37,6 +37,10 @@
       "url": "auth"
     },
     {
+      "title": "Traffic Control",
+      "url": "traffic-control"
+    },
+    {
       "title": "Performance",
       "url": "performance"
     },
