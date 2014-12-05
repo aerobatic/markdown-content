@@ -6,7 +6,7 @@
       "description": "Good foundation for a new Angular single page app using ng-routing.",
       "gitHubRepo": "aerobatic/angular-seed",
       "demoUrl": "http://angular-seed.aerobaticapp.com",
-      "buildTools": ["grunt"]
+      "buildTools": ["grunt", "gulp"]
     },
     {
       "title": "Ember Starter",
