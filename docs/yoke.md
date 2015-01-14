@@ -37,10 +37,10 @@ Run the simulator in release mode. This will cause your build step to be run fir
 ### deploy
 Deploy a new version of the app to production. The command will present prompts for the version name and an optional deploy message. This works well when a developer is deploying manually, but for automated deployments from a CI system the unattended flag can be set which will instead read inputs as command line args.
 
-#### --unattended, -u
+#### --unattended, -x
 Indicates `yoke` is being invoked by an unattended process.
 
-#### --version, -v
+#### --name, -n
 The name of this version. By default the version is read from package.json.
 
 #### --message, -m
