@@ -40,8 +40,8 @@ Deploy a new version of the app to production. The command will present prompts 
 #### --unattended, -x
 Indicates `yoke` is being invoked by an unattended process.
 
-#### --name, -n
-The name of this version. By default the version is read from package.json.
+#### --version-name
+The name of this version. By default the version is read from package.json. Only applicable in unattended mode, in attended mode an interactive command input is presented.
 
 #### --message, -m
 An optional deploy message
