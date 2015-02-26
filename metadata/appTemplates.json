@@ -17,6 +17,12 @@
       "buildTools": ["grunt"]
     },
     {
+      "title": "React Starter",
+      "iconUrl": "https://d1295eb12t7yss.cloudfront.net/icons/react-logo.png",
+      "description": "React starter template",
+      "gitHubRepo": "aerobatic/react-starter"
+    },
+    {
       "title": "Backbone Boilerplate",
       "iconUrl": "https://d1295eb12t7yss.cloudfront.net/icons/backbone-logo.png",
       "description": "Backbone boilerplate using RequireJS",
