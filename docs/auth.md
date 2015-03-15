@@ -1,3 +1,5 @@
+# Authentication
+
 Aerobatic has built-in support for requiring users to login via OAuth with a number of popular providers including Facebook, GitHub, Google, Twitter, Yammer, Instagram, and Salesforce. Once authenticated your app can make API calls to the provider on behalf of the logged user. The platform takes care of all the plumbing of integrating with the provider making it very simple to authenticate users of your app.
 
 ## OAuth Flows
