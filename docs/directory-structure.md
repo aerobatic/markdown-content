@@ -1,6 +1,6 @@
 # Directory Structure
 
-Aerobatic defaults to some specific common front-end conventions. By conforming to these conventions you can simplify your configuration (convention over configuration), however they can be overridden in the package.json file.
+Aerobatic defaults to some specific common front-end conventions. By conforming to these conventions you can simplify your configuration (convention over configuration).
 
 Here is the basic suggested skeleton for your app repo that each of the starter templates conforms to:
 
@@ -32,5 +32,4 @@ Your app's source code is nested beneath the `app` directory. This is where asse
 <script data-aero-build="debug" src="/js/main.js"></script>
 ```
 
-For deployment, `yoke` assumes that all the files (including the index page) required to run in `release` mode have been written to a directory called either `dist` or `build` off the root. Grunt or Gulp both have good facilities for writing the outputs of a task to a different directory. The [starter templates](/docs/starter-templates) have many examples for both Gulp and Grunt.
-
+For deployment, `yoke` assumes that all the files (including the index page) required to run in `release` mode have been written to a directory called either `dist` or `build` off the root. Grunt or Gulp both have good facilities for writing the outputs of a task to a different directory.

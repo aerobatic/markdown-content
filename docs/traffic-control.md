@@ -15,14 +15,14 @@ version; bypassing the weighted random version selection process.
 ```
 http://<app_name>.aerobaticapp.com?_version=<unique_version_id>`
 ```
-When a request comes in with the `_version` parameter, a `_version` cookie is set and the browser is redirected to the same URL with the `_version` parameter stripped off. This allows the app to subsequently modify the search portion of the URL without having to worry about maintaining the `_version` (so manual page refreshes won't nuke the version override). 
+When a request comes in with the `_version` parameter, a `_version` cookie is set and the browser is redirected to the same URL with the `_version` parameter stripped off. This allows the app to subsequently modify the search portion of the URL without having to worry about maintaining the `_version` (so manual page refreshes won't nuke the version override).
 
-However once the redirect happens, there's no obvious way for the end user to know they are looking at a pre-release version of the app. You may want to modify the UI in some way (perhaps render a preview banner) if the current version was selected based on an explicit override. In this case the `__config__` [global variable](/docs/index-page#-__config__-global-variable) will have a `versionMethod` property with the value `"urlOverride"`.
+However once the redirect happens, there's no obvious way for the end user to know they are looking at a pre-release version of the app. You may want to modify the UI in some way (perhaps render a preview banner) if the current version was selected based on an explicit override. In this case the `__config__` [global variable](/docs/index-html) will have a `versionMethod` property with the value `"urlOverride"`.
 
 ~~~js
 var __config__ = {
     // bunch of other properties here
-    versionId: '123', 
+    versionId: '123',
     versionName: 'version 123',
     versionMethod:'urlOverride' // or 'randomAssignment'
 };

@@ -14,4 +14,4 @@ Rather than have to type this all in, you can simply pass the `--open` option to
 
 When Aerobatic sees the `sim=1` in the URL it knows that the request should be treated differently than a normal request. The cached index.html for your userId is retrieved from cache and undergoes the same basic processing as a regular request, i.e. removing any `data-build-type="release"` elements and fixing referenced assets to http://localhost:3000 (the port number can be overridden with the `--port` option). Additionally a banner overlay is injected into `index.html` that appears in the top right corner of the page which lets you easily see at a glance that you are in simulator mode.
 
-You can make request to the [API proxy](docs/api-integration) in simulator mode just the same as your app running in production.
+You can make request to the [API proxy](docs/api-gateway) in simulator mode just the same as your app running in production.

@@ -5,10 +5,10 @@ In a single page application you have one entry page that is loaded when a user 
 2. `/src/index.(html|jade)`
 3. `/index.(html|jade)`
 
-For jade pages, the Aerobatic local development server will automatically compile to HTML avoiding the need to setup a watch and compile step in your build script.  You can read more about this in the [development server](/docs/develpement-server) docs.
+For jade pages, the Aerobatic local development server will automatically compile to HTML avoiding the need to setup a watch and compile step in your build script.  You can read more about this in the [simulator mode](/docs/simulator-mode) docs.
 
 ## Custom Attributes
-Aerobatic provides some custom attributes you can declare in your HTML to streamline and automate some common practices. 
+Aerobatic provides some custom attributes you can declare in your HTML to streamline and automate some common practices.
 
 ### data-aero-build
 Used to represent blocks of markup that should only be rendered in either `debug` or `release` builds. This is most commonly used to declare which JavaScript and CSS assets should be referenced. In `release` mode you will generally want to serve a small number of conactenated and minified set of assets, but in `debug` mode you want the full original source code. In the example below, only `app.min.css` and `app.min.js` will be rendered in the index page response in the release build, but omitted in `debug` mode.
@@ -77,7 +77,7 @@ If you do a view-source of an Aerobatic app you'll see a snippet right above the
 ```html
 <script type="text/javascript">var __config__={<json_structure>};</script>
 ```
-Aerobatic injects this script block into `index.html` on the fly when the page is rendered. The `__config__` variable holds a JSON data structure with a bunch of contextual information about the current request that you can access from your own JavaScript. 
+Aerobatic injects this script block into `index.html` on the fly when the page is rendered. The `__config__` variable holds a JSON data structure with a bunch of contextual information about the current request that you can access from your own JavaScript.
 
 ```js
 var __config__={
